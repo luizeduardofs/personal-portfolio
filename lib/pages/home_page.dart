@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portifolio/styles/app_colors.dart';
 
 import '../constants/path_images.dart';
 import '../constants/text_placeholder.dart';
 import '../styles/app_texts.dart';
+import '../widgets/experience_card_widget.dart';
 import '../widgets/my_button.dart';
 import '../widgets/my_container.dart';
+import '../widgets/skill_card_widget.dart';
 import '../widgets/social_card_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -112,12 +115,82 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 60),
+              MyContainer(
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Minhas ', style: AppTexts.titleDarkSlin),
+                        Text('Skills', style: AppTexts.titleDarkBold),
+                      ],
+                    ),
+                    const SizedBox(height: 60),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SkillCardWidget(
+                            icon: FontAwesomeIcons.flutter, label: "Flutter"),
+                        SkillCardWidget(
+                            icon: FontAwesomeIcons.dartLang, label: "Dart"),
+                        SkillCardWidget(
+                            icon: FontAwesomeIcons.git, label: "Git"),
+                        SkillCardWidget(
+                            icon: FontAwesomeIcons.docker, label: "Docker"),
+                        SkillCardWidget(
+                            icon: FontAwesomeIcons.js, label: "JavaScript"),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 60),
               Container(
-                // Subistituir pela cessão skills
-                width: 1280,
-                height: 600,
-                color: Colors.black,
-              )
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 80),
+                color: AppColors.black,
+                child: MyContainer(
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Minhas ', style: AppTexts.titleLightSlin),
+                          Text('Experiências', style: AppTexts.titleLightBold),
+                        ],
+                      ),
+                      const SizedBox(height: 80),
+                      const ExperienceCardWidget(
+                        experienceTitle: 'Software Developer',
+                        experienceDate: '2024',
+                        experienceDescription: TextPlaceholder.example,
+                      ),
+                      const SizedBox(height: 32),
+                      const ExperienceCardWidget(
+                        experienceTitle: 'Software Developer',
+                        experienceDate: '2024',
+                        experienceDescription: TextPlaceholder.example,
+                      ),
+                      const SizedBox(height: 32),
+                      const ExperienceCardWidget(
+                        experienceTitle: 'Software Developer',
+                        experienceDate: '2024',
+                        experienceDescription: TextPlaceholder.example,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              MyContainer(
+                child: Row(
+                  children: [
+                    Image.asset(AppImages.aboutImage),
+                    const Column(
+                      children: [],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ), // Section Main
         ),

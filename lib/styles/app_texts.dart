@@ -20,15 +20,29 @@ class AppTexts {
     color: AppColors.white,
     shadows: [
       const Shadow(
-        offset:
-            Offset(0, 0), // A posição do "stroke" (ajuste conforme necessário)
-        blurRadius: 3, // Tamanho do "stroke"
-        color: AppColors.black, // Cor do "stroke"
+        offset: Offset(0, 0),
+        blurRadius: 2,
+        color: AppColors.black,
       ),
     ],
   );
+  static final titleLightSlin = GoogleFonts.sora(
+    fontSize: 48,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+  );
+  static final titleLightBold = GoogleFonts.sora(
+    fontSize: 48,
+    fontWeight: FontWeight.w800,
+    color: AppColors.white,
+  );
+  static final subtitleText = GoogleFonts.sora(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
   static final descriptionText = GoogleFonts.sora(
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: FontWeight.w400,
     color: AppColors.zinc_500,
   );
@@ -36,5 +50,10 @@ class AppTexts {
     fontSize: 20,
     fontWeight: FontWeight.w600,
     color: AppColors.black,
+  );
+  static final bedgeText = GoogleFonts.sora(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.zinc_300,
   );
 }
